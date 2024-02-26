@@ -3,14 +3,9 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ItemEvent;
-
-import static java.awt.Color.black;
 
 public class PizzaGUIFrame extends JFrame
 {
-    //Declarations
-
     //JPanels
     private JPanel mainPnl, sizePnl, crustPnl, toppingsPnl, receiptPnl, buttonPnl, bottomPnl;
 
@@ -38,7 +33,6 @@ public class PizzaGUIFrame extends JFrame
     //booleans
     boolean crustSelected;
 
-
     //for JoptionPane
     int reply;
 
@@ -48,7 +42,6 @@ public class PizzaGUIFrame extends JFrame
     double sizePrice = 0;
     double taxTotal = 0;
     double finalTotal = 0;
-
 
     public PizzaGUIFrame()
     {
@@ -66,7 +59,6 @@ public class PizzaGUIFrame extends JFrame
 
         createBottomPnl();
         mainPnl.add(bottomPnl, BorderLayout.SOUTH);
-
 
         add(mainPnl);
         setTitle("Pizza GUI Order");
@@ -106,7 +98,6 @@ public class PizzaGUIFrame extends JFrame
 
         sizePnl.add(sizeSelect);
     }
-
 
     private void createCrustPnl()
     {
@@ -162,7 +153,6 @@ public class PizzaGUIFrame extends JFrame
         crustPnl.add(regularCrust);
         crustPnl.add(deepDishCrust);
         crustPnl.add(GFCrust);
-
     }
 
     private void createToppingsPnl()
@@ -218,9 +208,7 @@ public class PizzaGUIFrame extends JFrame
         toppingsPnl.add(pineappleBox);
         toppingsPnl.add(hamBox);
         toppingsPnl.add(pepperBox);
-
     }
-
 
     private void createReceiptPnl()
     {
@@ -233,11 +221,9 @@ public class PizzaGUIFrame extends JFrame
         receiptPnl.setBorder(new TitledBorder((new LineBorder(new Color(245, 12, 0), 6)), "Receipt:"));
         receiptPnl.setBackground(new Color(245, 228, 153));
 
-
         scroller = new JScrollPane(receipt);
         scroller.setBorder(new LineBorder(new Color(245, 156, 32), 6));
         receiptPnl.add(scroller);
-
     }
 
     private void createButtonPnl()
@@ -249,8 +235,7 @@ public class PizzaGUIFrame extends JFrame
         orderbtn = new JButton("Order Now!");
         orderbtn.setBorderPainted(true);
         orderbtn.setBorder(new LineBorder(new Color(245, 12, 0), 4));
-        orderbtn.addActionListener((ActionEvent ae) ->
-                validInput());
+        orderbtn.addActionListener((ActionEvent ae) -> validInput());
 
         clearbtn = new JButton("Clear Order");
         clearbtn.setBorderPainted(true);
@@ -263,9 +248,7 @@ public class PizzaGUIFrame extends JFrame
         quitbtn.addActionListener((ActionEvent ae) -> quitProgram());
 
         buttonPnl.add(orderbtn);
-
         buttonPnl.add(clearbtn);
-
         buttonPnl.add(quitbtn);
     }
 
@@ -284,23 +267,27 @@ public class PizzaGUIFrame extends JFrame
         {
             receipt.append("\nPepperoni"+ String.format("%51s", "1.00"));
         }
+
         if(mushroomBox.isSelected())
         {
-
             receipt.append("\nMushrooms"+ String.format("%49s", "1.00"));
         }
+
         if(pineappleBox.isSelected())
         {
             receipt.append("\nPineapple"+ String.format("%51s", "1.00"));
         }
+
         if(hamBox.isSelected())
         {
             receipt.append("\nHam"+ String.format("%60s", "1.00"));
         }
+
         if(oliveBox.isSelected())
         {
             receipt.append("\nOlives"+ String.format("%57s", "1.00"));
         }
+
         if(pepperBox.isSelected())
         {
             receipt.append("\nPeppers"+ String.format("%54s", "1.00"));
@@ -314,7 +301,6 @@ public class PizzaGUIFrame extends JFrame
         receipt.append("\n------------------------------------------------------------------------");
         receipt.append("\n"+ String.format("%-25s%40.2f", "Total: ", finalTotal));
         receipt.append("\n=======================================");
-
     }
 
     private String getJButton()
@@ -387,7 +373,6 @@ public class PizzaGUIFrame extends JFrame
             toppingsTotal++;
         }
 
-
         //gets price based on size
         if(sizeSelect.getSelectedItem()=="Small")
         {
@@ -409,9 +394,7 @@ public class PizzaGUIFrame extends JFrame
             sizePrice = 20.00;
         }
 
-
         beforeTax = sizePrice + toppingsTotal;
-
     }
 
     private void validInput()// checks to see if the user has selected a crust, size, and ingredient
@@ -446,7 +429,6 @@ public class PizzaGUIFrame extends JFrame
         {
             System.exit(0);
         }
-
     }
 
     private void clearBoard()// clears the form
@@ -455,7 +437,6 @@ public class PizzaGUIFrame extends JFrame
         sizeSelect.setSelectedIndex(0);
 
         //clears crust
-
         thinCrust.setSelected(false);
         regularCrust.setSelected(false);
         deepDishCrust.setSelected(false);
@@ -478,11 +459,5 @@ public class PizzaGUIFrame extends JFrame
         toppingsTotal = 0;
         sizePrice = 0;
         crustSelected = false;
-
-
     }
-
-
-
-
 }
