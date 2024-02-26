@@ -33,7 +33,7 @@ public class PizzaGUIFrame extends JFrame
     //booleans
     boolean crustSelected;
 
-    //for JoptionPane
+    //for JoptionPanet
     int reply;
 
     //variables
