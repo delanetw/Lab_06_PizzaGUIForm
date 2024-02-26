@@ -85,7 +85,7 @@ public class PizzaGUIFrame extends JFrame
         sizePnl = new JPanel();
 
         //border created for SizePnl
-        sizePnl.setBorder(new TitledBorder((new LineBorder(new Color(245, 12, 0), 6)), "Pick A Size!"));
+        sizePnl.setBorder(new TitledBorder((new LineBorder(new Color(245, 12, 0), 6)), "Pick A Size! "));
         sizePnl.setBackground(new Color(245, 228, 153));
         sizePnl.setPreferredSize(new Dimension(300, 300));
 
@@ -104,7 +104,7 @@ public class PizzaGUIFrame extends JFrame
         crustPnl = new JPanel();
 
         //border created for CrustPnl
-        crustPnl.setBorder(new TitledBorder((new LineBorder(new Color(245, 12, 0), 6)),"Pick A Crust!"));
+        crustPnl.setBorder(new TitledBorder((new LineBorder(new Color(245, 12, 0), 6)),"Pick A Crust! "));
         crustPnl.setBackground(new Color(245, 228, 153));
         crustPnl.setPreferredSize(new Dimension(300, 300));
 
@@ -159,7 +159,7 @@ public class PizzaGUIFrame extends JFrame
     {
         toppingsPnl = new JPanel();
 
-        toppingsPnl.setBorder(new TitledBorder((new LineBorder(new Color(245, 12, 0), 6)), "Pick Some Toppings!"));
+        toppingsPnl.setBorder(new TitledBorder((new LineBorder(new Color(245, 12, 0), 6)), "Pick Some Toppings! "));
         toppingsPnl.setBackground(new Color(245, 228, 153));
         toppingsPnl.setPreferredSize(new Dimension(300, 300));
 
@@ -218,7 +218,7 @@ public class PizzaGUIFrame extends JFrame
         receipt = new JTextArea(20,40);
         receipt.setEditable(false);
 
-        receiptPnl.setBorder(new TitledBorder((new LineBorder(new Color(245, 12, 0), 6)), "Receipt:"));
+        receiptPnl.setBorder(new TitledBorder((new LineBorder(new Color(245, 12, 0), 6)), "Receipt: "));
         receiptPnl.setBackground(new Color(245, 228, 153));
 
         scroller = new JScrollPane(receipt);
